@@ -27,7 +27,9 @@ import java.util.Optional;
 import static org.mockito.Mockito.when;
 
 @Provider("ProductService")
+
 //@PactFolder("pacts")
+//change this to connect to adidas pact flow instance
 @PactBroker(
         host = "localhost",
         port = "8000",

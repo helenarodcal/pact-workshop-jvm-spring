@@ -20,15 +20,15 @@ sourceCompatibility = '8'
 
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter:2.5.5'
+	implementation 'org.springframework.boot:spring-boot-starter-web:2.5.5'
 
-	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+	testImplementation('org.springframework.boot:spring-boot-starter-test:2.5.5') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
 	testImplementation 'com.github.tomakehurst:wiremock:2.27.2'
-	testImplementation 'au.com.dius.pact.consumer:java8:4.1.7'
-	testImplementation 'au.com.dius.pact.consumer:junit5:4.1.7'
+	testImplementation 'au.com.dius.pact.consumer:java8:4.1.28'
+	testImplementation 'au.com.dius.pact.consumer:junit5:4.2.14'
 }
 
 test {
@@ -65,6 +65,7 @@ def getGitBranch = { ->
 }
 
 pact {
+	//change this to connect to adidas pact flow instance
 	publish {
 		pactDirectory = 'consumer/build/pacts'
 		pactBrokerUrl = 'http://localhost:8000/'
